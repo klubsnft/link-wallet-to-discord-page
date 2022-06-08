@@ -1,0 +1,62 @@
+.klip-qr-popup {
+    position        : relative;
+    max-width       : 348px;
+    width           : 100%;
+    margin          : auto;
+    border-radius   : 4px;
+    background-color: #000000;
+    border          : 1px solid #FFF200;
+    padding         : 50px;
+
+    >h2 {
+        font-family   : Arthead FREE;
+        font-style    : normal;
+        font-weight   : normal;
+        font-size     : 33px;
+        text-align    : center;
+        letter-spacing: 0.03em;
+        color         : #FFF200;
+    }
+
+    >hr {
+        border       : 1px solid #FFF200;
+        margin-top   : 16px;
+        margin-bottom: 10px;
+    }
+
+    >.qr {
+        padding   : 16px 0;
+        text-align: center;
+    }
+
+    >p {
+        font-family   : NanumBarunpen;
+        font-style    : normal;
+        font-weight   : normal;
+        font-size     : 14px;
+        line-height   : 11px;
+        text-align    : center;
+        letter-spacing: 0.03em;
+        color         : white;
+        line-height   : 1.6rem;
+    }
+
+    >.button-container {
+        display        : flex;
+        justify-content: flex-end;
+        padding        : 16px;
+
+        >button {
+            background-color: transparent;
+            color           : white;
+            padding         : 8px 16px;
+            font-size       : 14px;
+            border-radius   : 4px;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+                box-shadow      : 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+}

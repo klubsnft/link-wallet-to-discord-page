@@ -1,0 +1,296 @@
+/*
+https://github.com/Hanul/sky-css-base
+v0.0.1 | 20210109
+Author: Sim Young Jae
+License: MIT
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*,
+*:focus {
+  outline: 0;
+}
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+a,
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  cursor: pointer;
+}
+button,
+input {
+  border: none;
+}
+[hidden] {
+  display: none !important;
+}
+[contenteditable] {
+  -webkit-tap-highlight-color: transparent;
+}
+.float-wrapper:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+@font-face {
+  font-family: "Arthead FREE";
+  src: url("../fonts/Arthead-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: 'Noto Sans KR', sans-serif;
+  src: url("http://fonts.googleapis.com/earlyaccess/notosanskr.css");
+}
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: black;
+  color: white;
+  display: flex;
+  margin: auto;
+}
+.popup-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 20px 0;
+}
+.klip-qr-popup {
+  position: relative;
+  max-width: 348px;
+  width: 100%;
+  margin: auto;
+  border-radius: 4px;
+  background-color: #000000;
+  border: 1px solid #FFF200;
+  padding: 50px;
+}
+.klip-qr-popup > h2 {
+  font-family: Arthead FREE;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 33px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #FFF200;
+}
+.klip-qr-popup > hr {
+  border: 1px solid #FFF200;
+  margin-top: 16px;
+  margin-bottom: 10px;
+}
+.klip-qr-popup > .qr {
+  padding: 16px 0;
+  text-align: center;
+}
+.klip-qr-popup > p {
+  font-family: NanumBarunpen;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 11px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: white;
+  line-height: 1.6rem;
+}
+.klip-qr-popup > .button-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+}
+.klip-qr-popup > .button-container > button {
+  background-color: transparent;
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+.klip-qr-popup > .button-container > button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.home-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+.home-view > header > h1 {
+  font-size: 48px;
+  font-family: "Arthead FREE";
+  color: #FFF200;
+}
+.home-view > header > p {
+  font-size: 20px;
+  margin-top: 16px;
+  font-weight: 300;
+}
+.home-view > article {
+  margin-top: 16px;
+}
+.home-view > article > img {
+  margin-top: 32px;
+}
+.home-view > article > .button-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 32px;
+  gap: 20px;
+}
+.home-view > article > .button-container > a {
+  display: flex;
+  color: black;
+  background-color: #FFF200;
+  padding: 0px 32px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 4px;
+  margin-top: 16px;
+}
+.home-view > article > .button-container > a:hover {
+  background-color: rgba(255, 242, 0, 0.9);
+}
+

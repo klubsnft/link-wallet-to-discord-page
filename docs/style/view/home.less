@@ -1,0 +1,54 @@
+.home-view {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    text-align     : center;
+    width          : 100%;
+    height         : 100vh;
+
+    >header {
+        >h1 {
+            font-size  : 48px;
+            font-family: "Arthead FREE";
+            color      : #FFF200;
+        }
+
+        >p {
+            font-size  : 20px;
+            margin-top : 16px;
+            font-weight: 300;
+        }
+    }
+
+    >article {
+        margin-top: 16px;
+
+        >img {
+            margin-top: 32px;
+        }
+
+        >.button-container {
+            display        : flex;
+            justify-content: center;
+            text-align     : center;
+            margin-top     : 32px;
+            gap            : 20px;
+
+            >a {
+                display         : flex;
+                color           : black;
+                background-color: #FFF200;
+                padding         : 0px 32px;
+                justify-content : center;
+                align-items     : center;
+                height          : 40px;
+                border-radius   : 4px;
+                margin-top      : 16px;
+
+                &:hover {
+                    background-color: rgba(255, 242, 0, 0.9);
+                }
+            }
+        }
+    }
+}
