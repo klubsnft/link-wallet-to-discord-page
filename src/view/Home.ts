@@ -24,7 +24,7 @@ export default class Home implements View {
                         el("p", "You logged in as:"),
                         this.walletAddressDisplay = el("p.address", "YJ#8436"),
                     ),
-                    el("span", "To connect.click on the wallet icon"),
+                    el("span", "To connect, click on the wallet icon"),
                     el(".button-container",
                         el("a.metamask",
                             el(".tooltip", "메타마스크")
