@@ -174,7 +174,7 @@ input {
   src: url("http://fonts.googleapis.com/earlyaccess/notosanskr.css");
 }
 @font-face {
-  font-family: 'Cutive Mono', sans-serif;
+  font-family: 'Cutive Mono', monospace;
   src: url("../fonts/CutiveMono-Regular.woff2") format("woff2");
 }
 @font-face {
@@ -316,7 +316,7 @@ body {
 }
 .home-view > article > .wallet-container > p {
   font-size: 26px;
-  font-family: 'Cutive Mono';
+  font-family: 'Cutive Mono', monospace;
   font-weight: 400;
   margin-bottom: 8px;
   color: #FFF200;
@@ -328,7 +328,7 @@ body {
 .home-view > article > span {
   font-size: 16px;
   font-weight: 400;
-  font-family: 'Cutive Mono';
+  font-family: 'Cutive Mono', monospace;
 }
 .home-view > article > .button-container {
   display: flex;
@@ -360,6 +360,7 @@ body {
   background-color: #fff200;
 }
 .home-view > article > .button-container > a:hover > .tooltip {
+  font-family: 'NanumBarunpen';
   display: flex;
   align-items: center;
   justify-content: center;
