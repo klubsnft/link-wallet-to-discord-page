@@ -354,23 +354,20 @@ body {
   margin-top: 16px;
 }
 .home-view > article > .button-container > a > .tooltip {
-  display: none;
-}
-.home-view > article > .button-container > a:hover {
-  background-color: #fff200;
-}
-.home-view > article > .button-container > a:hover > .tooltip {
   font-family: 'NanumBarunpen';
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  background-color: #78797A;
-  color: #fff;
-  top: -40px;
+  color: #FFF200;
+  bottom: -36px;
   border-radius: 4px;
   font-size: 12px;
   padding: 8px 7px;
+  margin-left: 5px;
+}
+.home-view > article > .button-container > a:hover {
+  background-color: #fff200;
 }
 .home-view > article > .button-container > .metamask {
   background-image: url(/images/logo/metamask.png);
