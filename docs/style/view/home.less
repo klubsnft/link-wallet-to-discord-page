@@ -6,25 +6,77 @@
     width          : 100%;
     height         : 100vh;
 
+    @media @phone {
+        padding: 8px;
+    }
+
     >header {
+        >img {
+            margin-bottom: 50px;
+        }
+
         >h1 {
-            font-size  : 48px;
+            font-size  : 90px;
             font-family: "Arthead FREE";
             color      : #FFF200;
         }
 
+        >.title {
+            @media @phone {
+                font-size: 48px;
+                padding  : 8px 0px;
+            }
+        }
+
+        >.discord {
+            font-size: 150px;
+            color    : #453DBB;
+
+            @media @phone {
+                font-size: 72px;
+                padding  : 12px 0px;
+            }
+        }
+
         >p {
+            font-family: "NanumBarunpen";
             font-size  : 20px;
             margin-top : 16px;
             font-weight: 300;
+        }
+
+        >hr {
+            max-width: 500px;
+            border   : 1px solid #FFF200;
+            margin   : 20px auto;
         }
     }
 
     >article {
         margin-top: 16px;
 
-        >img {
-            margin-top: 32px;
+        >.wallet-container {
+            display        : flex;
+            justify-content: center;
+
+            >p {
+                font-size    : 26px;
+                font-family  : 'Cutive Mono';
+                font-weight  : 400;
+                margin-bottom: 8px;
+                color        : #FFF200;
+            }
+
+            >.address {
+                margin-left: 8px;
+                color      : white;
+            }
+        }
+
+        >span {
+            font-size  : 16px;
+            font-weight: 400;
+            font-family: 'Cutive Mono';
         }
 
         >.button-container {
@@ -32,22 +84,42 @@
             justify-content: center;
             text-align     : center;
             margin-top     : 32px;
-            gap            : 20px;
+            gap            : 40px;
 
             >a {
-                display         : flex;
-                color           : black;
-                background-color: #FFF200;
-                padding         : 0px 32px;
-                justify-content : center;
-                align-items     : center;
-                height          : 40px;
-                border-radius   : 4px;
-                margin-top      : 16px;
+                width            : 70px;
+                height           : 70px !important;
+                display          : flex;
+                background-repeat: no-repeat;
+                background-color : white;
+                border           : 1.5px solid #FFF200;
+                box-shadow       : 6px 6px #FFF200;
+                padding          : 0px 32px;
+                justify-content  : center;
+                align-items      : center;
+                height           : 40px;
+                margin-top       : 16px;
+
+                >p {
+                    display: none;
+                }
 
                 &:hover {
-                    background-color: rgba(255, 242, 0, 0.9);
+                    background-color: rgba(255, 242, 0, 1);
                 }
+            }
+
+            >.metamask {
+                background-image: url(/images/logo/metamask.png);
+            }
+
+            >.klaytn {
+                background-image: url(/images/logo/klaytn.png);
+            }
+
+            >.klip {
+                background-image: url(/images/logo/klip.png);
+                background-size : 69px;
             }
         }
     }
