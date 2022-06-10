@@ -27,13 +27,13 @@ export default class Home implements View {
                     el("span", "To connect.click on the wallet icon"),
                     el(".button-container",
                         el("a.metamask",
-                            el("p", "메타마스크 연결")
+                            el(".tooltip", "메타마스크")
                         ),
                         el("a.klaytn",
-                            el("p", "카이카스 연결"),
+                            el(".tooltip", "카이카스"),
                         ),
                         el("a.klip",
-                            el("p", "클립 연결"),
+                            el(".tooltip", "클립"),
                         ),
                     ),
                 ),

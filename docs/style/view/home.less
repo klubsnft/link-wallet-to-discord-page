@@ -87,6 +87,8 @@
             gap            : 40px;
 
             >a {
+                position         : relative;
+                display          : block;
                 width            : 70px;
                 height           : 70px !important;
                 display          : flex;
@@ -100,12 +102,25 @@
                 height           : 40px;
                 margin-top       : 16px;
 
-                >p {
+                >.tooltip {
                     display: none;
                 }
 
                 &:hover {
                     background-color: rgba(255, 242, 0, 1);
+
+                    >.tooltip {
+                        display         : flex;
+                        align-items     : center;
+                        justify-content : center;
+                        width           : 72px;
+                        height          : 40px;
+                        position        : absolute;
+                        background-color: #666;
+                        color           : #FFF200;
+                        bottom          : -52px;
+                        box-shadow      : 6px 6px #FFF200;
+                    }
                 }
             }
 

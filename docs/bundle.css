@@ -337,6 +337,8 @@ body {
   gap: 40px;
 }
 .home-view > article > .button-container > a {
+  position: relative;
+  display: block;
   width: 70px;
   height: 70px !important;
   display: flex;
@@ -350,11 +352,23 @@ body {
   height: 40px;
   margin-top: 16px;
 }
-.home-view > article > .button-container > a > p {
+.home-view > article > .button-container > a > .tooltip {
   display: none;
 }
 .home-view > article > .button-container > a:hover {
   background-color: #fff200;
+}
+.home-view > article > .button-container > a:hover > .tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 40px;
+  position: absolute;
+  background-color: #666;
+  color: #FFF200;
+  bottom: -52px;
+  box-shadow: 6px 6px #FFF200;
 }
 .home-view > article > .button-container > .metamask {
   background-image: url(/images/logo/metamask.png);
