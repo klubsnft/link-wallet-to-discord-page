@@ -14,12 +14,12 @@ export default class ConnectWalletPopup extends Popup {
                 el("p", msg("CONNECT_WALLET_DESC")),
                 el(".button-container",
                     el("a.connect-kaikas-button",
-                        el("img", { src: "/images/shared/logo/kaikas.svg" }),
+                        el("img", { src: "/images/logo/kaikas.svg" }),
                         msg("CONNECT_WALLET_BUTTON1"),
                         { href: "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi", target: "_blank" },
                     ),
                     el("a.connect-klip-button",
-                        el("img", { src: "/images/shared/logo/klip.svg" }),
+                        el("img", { src: "/images/logo/klip.svg" }),
                         msg("CONNECT_WALLET_BUTTON2"),
                         {
                             click: async () => {
