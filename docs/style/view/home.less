@@ -1,138 +1,141 @@
 .home-view {
-    display        : flex;
-    flex-direction : column;
-    justify-content: center;
-    text-align     : center;
-    width          : 100%;
-    height         : 100vh;
-    margin         : 32px 0px;
+    position      : fixed;
+    left          : 0;
+    top           : 0;
+    width         : 100%;
+    height        : 100%;
+    display       : flex;
+    flex-direction: column;
+    overflow-y    : scroll;
+    padding       : 32px 0px 62px;
 
-    @media @phone {
-        padding: 8px;
-    }
+    >main {
+        margin    : auto;
+        text-align: center;
 
-    >header {
-        >img {
-            margin-bottom: 50px;
-        }
-
-        >h1 {
-            font-size  : 90px;
-            font-family: "Arthead FREE";
-            color      : #FFF200;
-        }
-
-        >.title {
-            @media @phone {
-                font-size: 48px;
-                padding  : 8px 0px;
+        >header {
+            >img {
+                margin-bottom: 50px;
             }
-        }
 
-        >.discord {
-            font-size: 150px;
-            color    : #453DBB;
-
-            @media @phone {
-                font-size: 72px;
-                padding  : 12px 0px;
+            >h1 {
+                font-size  : 90px;
+                font-family: "Arthead FREE";
+                color      : #FFF200;
             }
-        }
 
-        >p {
-            font-family: "NanumBarunpen";
-            font-size  : 20px;
-            margin-top : 16px;
-            font-weight: 300;
-        }
+            >.title {
+                @media @phone {
+                    font-size: 48px;
+                    padding  : 8px 0px;
+                }
+            }
 
-        >hr {
-            max-width: 500px;
-            border   : 1px solid #FFF200;
-            margin   : 20px auto;
-        }
-    }
+            >.discord {
+                font-size: 150px;
+                color    : #453DBB;
 
-    >article {
-        margin-top: 16px;
-
-        >.wallet-container {
-            display        : flex;
-            justify-content: center;
+                @media @phone {
+                    font-size: 72px;
+                    padding  : 12px 0px;
+                }
+            }
 
             >p {
-                font-size    : 21px;
-                font-family  : 'Cutive Mono', monospace;
-                font-weight  : 100;
-                margin-bottom: 8px;
-                color        : #FFF200;
+                font-family: "NanumBarunpen";
+                font-size  : 20px;
+                margin-top : 16px;
+                font-weight: 300;
             }
 
-            >.address {
-                margin-left: 8px;
-                color      : white;
+            >hr {
+                max-width: 500px;
+                border   : 1px solid #FFF200;
+                margin   : 20px auto;
             }
         }
 
-        >span {
-            font-size  : 14px;
-            font-weight: 400;
-            font-family: 'Cutive Mono', monospace;
-        }
+        >article {
+            margin-top: 16px;
 
-        >.button-container {
-            display        : flex;
-            justify-content: center;
-            text-align     : center;
-            margin-top     : 32px;
-            gap            : 40px;
+            >.wallet-container {
+                display        : flex;
+                justify-content: center;
 
-            >a {
-                position         : relative;
-                display          : block;
-                width            : 70px;
-                height           : 70px !important;
-                display          : flex;
-                background-repeat: no-repeat;
-                background-color : white;
-                border           : 1.5px solid #FFF200;
-                box-shadow       : 6px 6px #FFF200;
-                padding          : 0px 32px;
-                justify-content  : center;
-                align-items      : center;
-                height           : 40px;
-                margin-top       : 16px;
-
-                >.tooltip {
-                    display        : flex;
-                    font-family    : 'NanumBarunpen';
-                    display        : flex;
-                    align-items    : center;
-                    justify-content: center;
-                    position       : absolute;
-                    color          : #FFF200;
-                    bottom         : -30px;
-                    border-radius  : 4px;
-                    font-size      : 12px;
-                    margin-left    : 9px;
+                >p {
+                    font-size    : 21px;
+                    font-family  : 'Cutive Mono', monospace;
+                    font-weight  : 100;
+                    margin-bottom: 8px;
+                    color        : #FFF200;
                 }
 
-                &:hover {
-                    background-color: rgba(255, 242, 0, 1);
+                >.address {
+                    margin-left: 8px;
+                    color      : white;
                 }
             }
 
-            >.metamask {
-                background-image: url(/images/logo/metamask.png);
+            >span {
+                font-size  : 14px;
+                font-weight: 400;
+                font-family: 'Cutive Mono', monospace;
             }
 
-            >.klaytn {
-                background-image: url(/images/logo/klaytn.png);
-            }
+            >.button-container {
+                display        : flex;
+                justify-content: center;
+                text-align     : center;
+                margin-top     : 32px;
+                gap            : 40px;
 
-            >.klip {
-                background-image: url(/images/logo/klip.png);
-                background-size : 69px;
+                >a {
+                    position         : relative;
+                    display          : block;
+                    width            : 70px;
+                    height           : 70px !important;
+                    display          : flex;
+                    background-repeat: no-repeat;
+                    background-color : white;
+                    border           : 1.5px solid #FFF200;
+                    box-shadow       : 6px 6px #FFF200;
+                    padding          : 0px 32px;
+                    justify-content  : center;
+                    align-items      : center;
+                    height           : 40px;
+                    margin-top       : 16px;
+
+                    >.tooltip {
+                        display        : flex;
+                        font-family    : 'NanumBarunpen';
+                        display        : flex;
+                        align-items    : center;
+                        justify-content: center;
+                        position       : absolute;
+                        color          : #FFF200;
+                        bottom         : -30px;
+                        border-radius  : 4px;
+                        font-size      : 12px;
+                        margin-left    : 9px;
+                    }
+
+                    &:hover {
+                        background-color: rgba(255, 242, 0, 1);
+                    }
+                }
+
+                >.metamask {
+                    background-image: url(/images/logo/metamask.png);
+                }
+
+                >.klaytn {
+                    background-image: url(/images/logo/klaytn.png);
+                }
+
+                >.klip {
+                    background-image: url(/images/logo/klip.png);
+                    background-size : 69px;
+                }
             }
         }
     }

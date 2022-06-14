@@ -14,8 +14,4 @@ import Home from "./view/Home";
         SkyRouter.go(sessionStorage.__spa_path);
         sessionStorage.removeItem("__spa_path");
     }
-
-    if (await Wallet.connected() !== true) {
-        await Wallet.connect();
-    }
 })();
