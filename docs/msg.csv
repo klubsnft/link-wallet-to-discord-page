@@ -10,3 +10,9 @@ CONNECT_WALLET_BUTTON2,카카오톡 클립으로 연결,Connect with Kakao Talk 
 CONNECT_WALLET_BUTTON3,연결하지 않고 둘러보기,Explore without Wallet Connection
 CONFIRM_BUTTON,확인,Confirm
 CANCEL_BUTTON,취소,Cancel
+HOLDER_CHECK_SUCCESS_DESC,홀더 인증 완료,Holder authentication completed
+HOLDER_CHECK_FAIL_DESC,홀더 인증 실패,Holder authentication failed
+DISCORD_DESC,디스코드 지갑 연결,Link Discord Wallet
+METAMASK_DESC,메타마스크,METAMASK
+KAIKAS_DESC,카이카스,KAIKAS
+KLIP_DESC,클립,KLIP

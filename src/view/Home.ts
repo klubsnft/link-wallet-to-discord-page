@@ -22,7 +22,7 @@ export default class Home implements View {
                     el("hr"),
                     el("h1.title", "Connecting\nMy Wallet to"),
                     el("h1.discord", "Discord"),
-                    el("p", "디스코드 지갑 연결"),
+                    el("p", msg("DISCORD_DESC")),
                     el("hr"),
                 ),
                 el("article",
@@ -33,7 +33,7 @@ export default class Home implements View {
                     el("span", "To connect, click on the wallet icon"),
                     el(".button-container",
                         el("a.metamask",
-                            el(".tooltip", "메타마스크"),
+                            el(".tooltip", msg("METAMASK_DESC")),
                             {
                                 click: async () => {
                                     if (this.code !== undefined) {
@@ -43,7 +43,7 @@ export default class Home implements View {
                             },
                         ),
                         el("a.klaytn",
-                            el(".tooltip", "카이카스"),
+                            el(".tooltip", msg("KAIKAS_DESC")),
                             {
                                 click: async () => {
                                     if (this.code !== undefined) {
@@ -53,7 +53,7 @@ export default class Home implements View {
                             },
                         ),
                         el("a.klip",
-                            el(".tooltip", "클립"),
+                            el(".tooltip", msg("KLIP_DESC")),
                             {
                                 click: async () => {
                                     if (this.code !== undefined) {
