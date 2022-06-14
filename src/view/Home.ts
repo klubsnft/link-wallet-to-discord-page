@@ -1,46 +1,184 @@
-import { BodyNode, DomNode, el } from "skydapp-browser";
+import { BodyNode, DomNode, el, msg } from "skydapp-browser";
 import { View, ViewParams } from "skydapp-common";
+import Config from "../Config";
+import EthereumWallet from "../ethereum/EthereumWallet";
+import Kaikas from "../klaytn/Kaikas";
+import Klip from "../klaytn/Klip";
 
+const LINK_WALLET_TO_DISCORD_MSG = "Link wallet to Discord";
 
 export default class Home implements View {
 
-    private container: DomNode;
+    private code: string | undefined;
 
-    private walletAddressDisplay: DomNode;
+    private container: DomNode;
+    private discordAccountDisplay: DomNode;
 
     constructor() {
-        BodyNode.append(
-            this.container = el(".home-view",
-                el("main",
-                    el("header",
-                        el("img", { src: "/images/logo/klubs.png", alt: "klubs" }),
-                        el("hr"),
-                        el("h1.title", "Connecting\nMy Wallet to"),
-                        el("h1.discord", "Discord"),
-                        el("p", "디스코드 지갑 연결"),
-                        el("hr"),
+        BodyNode.append(this.container = el(".home-view",
+            el("main",
+                el("header",
+                    el("img", { src: "/images/logo/klubs.png", alt: "klubs" }),
+                    el("hr"),
+                    el("h1.title", "Connecting\nMy Wallet to"),
+                    el("h1.discord", "Discord"),
+                    el("p", "디스코드 지갑 연결"),
+                    el("hr"),
+                ),
+                el("article",
+                    el(".wallet-container",
+                        el("p", "You logged in as:"),
+                        this.discordAccountDisplay = el("p.address"),
                     ),
-                    el("article",
-                        el(".wallet-container",
-                            el("p", "You logged in as:"),
-                            this.walletAddressDisplay = el("p.address", "YJ#8436"),
+                    el("span", "To connect, click on the wallet icon"),
+                    el(".button-container",
+                        el("a.metamask",
+                            el(".tooltip", "메타마스크"),
+                            {
+                                click: async () => {
+                                    if (this.code !== undefined) {
+                                        this.connectToMetamask(this.code);
+                                    }
+                                },
+                            },
                         ),
-                        el("span", "To connect, click on the wallet icon"),
-                        el(".button-container",
-                            el("a.metamask",
-                                el(".tooltip", "메타마스크")
-                            ),
-                            el("a.klaytn",
-                                el(".tooltip", "카이카스"),
-                            ),
-                            el("a.klip",
-                                el(".tooltip", "클립"),
-                            ),
+                        el("a.klaytn",
+                            el(".tooltip", "카이카스"),
+                            {
+                                click: async () => {
+                                    if (this.code !== undefined) {
+                                        this.connectToKaikas(this.code);
+                                    }
+                                },
+                            },
+                        ),
+                        el("a.klip",
+                            el(".tooltip", "클립"),
+                            {
+                                click: async () => {
+                                    if (this.code !== undefined) {
+                                        this.connectToKlip(this.code);
+                                    }
+                                },
+                            },
                         ),
                     ),
                 ),
-            )
-        );
+            ),
+        ));
+        this.load();
+    }
+
+    private async load() {
+
+        this.code = new URLSearchParams(window.location.search).get("code")!;
+        if (this.code !== null) {
+            try {
+                await fetch(`${Config.apiURI}/discord/token?${new URLSearchParams({
+                    code: this.code,
+                    redirect_uri: `${window.location.protocol}//${window.location.host}`,
+                })}`);
+            } catch (error) {
+                console.error(error);
+                this.code = undefined;
+            }
+        } else {
+            this.code = undefined;
+        }
+
+        if (this.code !== undefined) {
+            try {
+                const result = await fetch(`${Config.apiURI}/discord/me?${new URLSearchParams({
+                    code: this.code,
+                })}`);
+                const discordUser = await result.json();
+                this.discordAccountDisplay.empty().appendText(`${discordUser.username}#${discordUser.discriminator}`);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        else {
+            location.href = `https://discord.com/api/oauth2/authorize?client_id=${Config.applicationId}&redirect_uri=${encodeURIComponent(`${window.location.protocol}//${window.location.host}`)}&response_type=code&scope=identify`;
+        }
+    }
+
+    private async connectToMetamask(code: string) {
+        if (await EthereumWallet.connected() !== true) {
+            await EthereumWallet.connect();
+        }
+        const address = await EthereumWallet.loadAddress();
+        if (address !== undefined) {
+            const signedMessage = await EthereumWallet.signMessage(LINK_WALLET_TO_DISCORD_MSG);
+            try {
+                const result = await fetch(`${Config.apiURI}/link-wallet-to-discord/metamask`, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        code,
+                        signedMessage,
+                        address,
+                    }),
+                });
+                if ((await result.json()).linked === true) {
+                    alert(msg("HOLDER_CHECK_SUCCESS_DESC"));
+                } else {
+                    alert(msg("HOLDER_CHECK_FAIL_DESC"));
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    }
+
+    private async connectToKaikas(code: string) {
+        if (await Kaikas.connected() !== true) {
+            await Kaikas.connect();
+        }
+        const address = await Kaikas.loadAddress();
+        if (address !== undefined) {
+            const signedMessage = await Kaikas.signMessage(LINK_WALLET_TO_DISCORD_MSG);
+            try {
+                const result = await fetch(`${Config.apiURI}/link-wallet-to-discord/kaikas`, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        code,
+                        signedMessage,
+                        address,
+                    }),
+                });
+                if ((await result.json()).linked === true) {
+                    alert(msg("HOLDER_CHECK_SUCCESS_DESC"));
+                } else {
+                    alert(msg("HOLDER_CHECK_FAIL_DESC"));
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    }
+
+    private async connectToKlip(code: string) {
+        if (Klip.connected !== true) {
+            await Klip.connect();
+        }
+        if (Klip.address !== undefined) {
+            try {
+                const result = await fetch(`${Config.apiURI}/link-wallet-to-discord/klip`, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        code,
+                        address: Klip.address,
+                    }),
+                });
+                if ((await result.json()).linked === true) {
+                    alert(msg("HOLDER_CHECK_SUCCESS_DESC"));
+                } else {
+                    alert(msg("HOLDER_CHECK_FAIL_DESC"));
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
     }
 
     public changeParams(params: ViewParams, uri: string): void { }

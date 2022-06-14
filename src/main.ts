@@ -1,7 +1,6 @@
 import { BrowserInfo, msg } from "skydapp-browser";
 import { SkyRouter } from "skydapp-common";
 import superagent from "superagent";
-import Wallet from "./klaytn/Wallet";
 import Home from "./view/Home";
 
 (async () => {

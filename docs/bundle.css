@@ -490,7 +490,7 @@ body {
 }
 .home-view > main > article > .wallet-container > p {
   font-size: 21px;
-  font-family: 'Cutive Mono', monospace;
+  font-family: "Cutive Mono", monospace;
   font-weight: 100;
   margin-bottom: 8px;
   color: #FFF200;
@@ -502,7 +502,7 @@ body {
 .home-view > main > article > span {
   font-size: 14px;
   font-weight: 400;
-  font-family: 'Cutive Mono', monospace;
+  font-family: "Cutive Mono", monospace;
 }
 .home-view > main > article > .button-container {
   display: flex;
@@ -528,7 +528,7 @@ body {
   margin-top: 16px;
 }
 .home-view > main > article > .button-container > a > .tooltip {
-  font-family: 'NanumBarunpen';
+  font-family: "NanumBarunpen";
   display: flex;
   align-items: center;
   justify-content: center;

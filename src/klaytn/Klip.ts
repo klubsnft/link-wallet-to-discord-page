@@ -8,7 +8,7 @@ const klipSDK = require("klip-sdk");
 
 class Klip extends EventContainer {
 
-    private static readonly BAPP_NAME = "Gaia Kronos";
+    private static readonly BAPP_NAME = "KLUBS";
 
     public store = new Store("klip-store");
 

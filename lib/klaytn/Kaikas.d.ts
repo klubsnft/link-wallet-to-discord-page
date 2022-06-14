@@ -1,0 +1,18 @@
+import { EventContainer } from "skydapp-common";
+declare class Kaikas extends EventContainer {
+    private klaytn;
+    private caver;
+    constructor();
+    get installed(): boolean;
+    private checkConnected;
+    loadAddress(): Promise<string | undefined>;
+    loadChainId(): Promise<any>;
+    connected(): Promise<boolean>;
+    connect(): Promise<void>;
+    createContract(address: string, abi: any): any;
+    addToken(address: string, symbol: string, decimals: number, image: string): void;
+    signMessage(message: string): Promise<any>;
+}
+declare const _default: Kaikas;
+export default _default;
+//# sourceMappingURL=Kaikas.d.ts.map
