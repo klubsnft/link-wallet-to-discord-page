@@ -1,4 +1,4 @@
 export default {
-    applicationId: "986281893416816720",
+    applicationId: "984057760582889523",
     apiURI: "https://api-v2.klu.bs",
 };
