@@ -66,7 +66,7 @@ export default class Home implements View {
                 ),
             ),
         ));
-        this.load();
+        // this.load();
     }
 
     private async load() {
