@@ -1,0 +1,101 @@
+.meecats-view {
+    position        : fixed;
+    left            : 0;
+    top             : 0;
+    width           : 100%;
+    height          : 100%;
+    display         : flex;
+    flex-direction  : column;
+    overflow-y      : scroll;
+    padding         : 32px 0px 62px;
+    background-color: rgb(117, 196, 249);
+    width           : 100%;
+    height          : 100%;
+    margin          : auto;
+    font-family     : 'Jellee-Roman';
+
+    >header {
+        display        : flex;
+        justify-content: center;
+        margin-bottom  : 64px;
+
+        >img {
+            width : 220px;
+            height: 80px;
+        }
+    }
+
+    >section {
+        display        : flex;
+        flex-direction : column;
+        justify-content: center;
+        text-align     : center;
+
+        >.img-container {
+            display        : flex;
+            justify-content: center;
+
+            >img {
+                width: 720px;
+            }
+        }
+
+        >h6 {
+            font-size : 20px;
+            margin-top: 64px;
+            color     : rgb(210, 240, 255);
+        }
+
+        >.address {
+            margin     : 16px 0px;
+            font-size  : 34px;
+            color      : rgb(255, 253, 138);
+            font-family: 'Gosanja';
+        }
+
+        >.connect {
+            display        : flex;
+            align-items    : center;
+            justify-content: center;
+            font-size      : 20px;
+            margin         : 88px 0px;
+            color          : rgb(210, 240, 255);
+
+            >p {
+                margin: 0px 32px;
+            }
+
+            >.line {
+                height          : 4px;
+                border-radius   : 4px;
+                max-width       : 260px;
+                width           : 100%;
+                background-color: rgb(210, 240, 255);
+                float           : left;
+            }
+        }
+
+        >span {
+            color      : #488cf6;
+            font-family: 'Jellee-Roman';
+            margin-top : 128px;
+        }
+
+        >.button-container {
+            display        : flex;
+            justify-content: center;
+            gap            : 48px;
+
+            >a {
+                >img {
+                    width: 200px;
+                }
+
+                >p {
+                    font-size : 20px;
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+}

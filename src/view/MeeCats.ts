@@ -16,54 +16,56 @@ export default class MeeCats implements View {
 
     constructor() {
         BodyNode.append(this.container = el(".meecats-view",
-            el("main",
-                el("header",
-                    el("img", { src: "/images/logo/klubs.png", alt: "klubs" }),
-                    el("hr"),
-                    el("h1.title", "Connecting\nMy Wallet to"),
-                    el("h1.discord", "Discord"),
-                    el("p", msg("DISCORD_DESC")),
-                    el("hr"),
+            el("header",
+                el("img", { src: "/images/view/meecat/logo_meecats.png", alt: "meeCats" }),
+            ),
+            el("section",
+                el(".img-container",
+                    el("img", { src: "/images/view/meecat/title.png", alt: "meeCats" }),
                 ),
-                el("article",
-                    el(".wallet-container",
-                        el("p", "You logged in as:"),
-                        this.discordAccountDisplay = el("p.address"),
+                el("h6", "AMOUNT"),
+                this.discordAccountDisplay = el("p.address"),
+                el("p.connect",
+                    el(".line"),
+                    el("p", "CONNECT"),
+                    el(".line"),
+                ),
+                el(".button-container",
+                    el("a",
+                        el("img", { src: "/images/view/meecat/btn_metamask.png", alt: "metamask" }),
+                        el("p", "Metamask"),
+                        {
+                            click: async () => {
+                                if (this.code !== undefined) {
+                                    this.connectToMetamask(this.code);
+                                }
+                            },
+                        },
                     ),
-                    el("span", "To connect, click on the wallet icon"),
-                    el(".button-container",
-                        el("a.metamask",
-                            el(".tooltip", msg("METAMASK_DESC")),
-                            {
-                                click: async () => {
-                                    if (this.code !== undefined) {
-                                        this.connectToMetamask(this.code);
-                                    }
-                                },
+                    el("a",
+                        el("img", { src: "/images/view/meecat/btn_kaikas.png", alt: "kaikas" }),
+                        el("p", "Kaikas"),
+                        {
+                            click: async () => {
+                                if (this.code !== undefined) {
+                                    this.connectToKaikas(this.code);
+                                }
                             },
-                        ),
-                        el("a.klaytn",
-                            el(".tooltip", msg("KAIKAS_DESC")),
-                            {
-                                click: async () => {
-                                    if (this.code !== undefined) {
-                                        this.connectToKaikas(this.code);
-                                    }
-                                },
+                        },
+                    ),
+                    el("a",
+                        el("img", { src: "/images/view/meecat/btn_klip.png", alt: "klip" }),
+                        el("p", "Klip"),
+                        {
+                            click: async () => {
+                                if (this.code !== undefined) {
+                                    this.connectToKlip(this.code);
+                                }
                             },
-                        ),
-                        el("a.klip",
-                            el(".tooltip", msg("KLIP_DESC")),
-                            {
-                                click: async () => {
-                                    if (this.code !== undefined) {
-                                        this.connectToKlip(this.code);
-                                    }
-                                },
-                            },
-                        ),
+                        },
                     ),
                 ),
+                el("span", "Powered by KLUBS")
             ),
         ));
         this.load();
