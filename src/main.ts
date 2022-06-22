@@ -7,12 +7,12 @@ import MeeCats from "./view/MeeCats";
 (async () => {
     msg.language = BrowserInfo.language;
     msg.parseCSV((await superagent.get("/msg.csv")).text);
-
-    SkyRouter.route("", Home);
-    SkyRouter.route("meecats", MeeCats);
-
+    
     if (sessionStorage.__spa_path) {
         SkyRouter.go(sessionStorage.__spa_path);
         sessionStorage.removeItem("__spa_path");
     }
+
+    SkyRouter.route("", Home);
+    SkyRouter.route("meecats", MeeCats);
 })();
