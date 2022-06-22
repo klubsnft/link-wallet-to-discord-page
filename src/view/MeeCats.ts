@@ -65,7 +65,7 @@ export default class MeeCats implements View {
                         },
                     ),
                 ),
-                el("span", "Powered by KLUBS")
+                el("span", "Powered by ", el("a", "KLUBS", { href: "https://klu.bs" }))
             ),
         ));
         this.load();
@@ -78,7 +78,7 @@ export default class MeeCats implements View {
             try {
                 await fetch(`${Config.apiURI}/discord/token?${new URLSearchParams({
                     code: this.code,
-                    redirect_uri: `${window.location.protocol}//${window.location.host}`,
+                    redirect_uri: `${window.location.protocol}//${window.location.host}/meecats`,
                 })}`);
             } catch (error) {
                 console.error(error);
@@ -101,7 +101,7 @@ export default class MeeCats implements View {
         }
 
         else {
-            location.href = `https://discord.com/api/oauth2/authorize?client_id=${Config.applicationId}&redirect_uri=${encodeURIComponent(`${window.location.protocol}//${window.location.host}`)}&response_type=code&scope=identify`;
+            location.href = `https://discord.com/api/oauth2/authorize?client_id=${Config.applicationId}&redirect_uri=${encodeURIComponent(`${window.location.protocol}//${window.location.host}/meecats`)}&response_type=code&scope=identify`;
         }
     }
 
