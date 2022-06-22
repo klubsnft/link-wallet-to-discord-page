@@ -23,7 +23,7 @@ export default class MeeCats implements View {
                 el(".img-container",
                     el("img", { src: "/images/view/meecat/title.png", alt: "meeCats" }),
                 ),
-                el("h6", "AMOUNT"),
+                el("h6", "ACCOUNT"),
                 this.discordAccountDisplay = el("p.address"),
                 el("p.connect",
                     el(".line"),
