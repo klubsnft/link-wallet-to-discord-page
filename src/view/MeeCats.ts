@@ -24,7 +24,7 @@ export default class MeeCats implements View {
                     el("img", { src: "/images/view/meecat/title.png", alt: "meeCats" }),
                 ),
                 el("h6", "ACCOUNT"),
-                this.discordAccountDisplay = el("p.address"),
+                this.discordAccountDisplay = el("p.address", "..."),
                 el("p.connect",
                     el(".line"),
                     el("p", "CONNECT"),
@@ -68,7 +68,7 @@ export default class MeeCats implements View {
                 el("a.powered", { href: "https://klu.bs/" }, "Powered by KLUBS"),
             ),
         ));
-        // this.load();
+        this.load();
     }
 
     private async load() {

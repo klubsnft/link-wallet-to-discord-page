@@ -28,7 +28,7 @@ export default class Home implements View {
                 el("article",
                     el(".wallet-container",
                         el("p", "You logged in as:"),
-                        this.discordAccountDisplay = el("p.address"),
+                        this.discordAccountDisplay = el("p.address", "..."),
                     ),
                     el("span", "To connect, click on the wallet icon"),
                     el(".button-container",
