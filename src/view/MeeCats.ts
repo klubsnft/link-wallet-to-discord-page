@@ -65,10 +65,10 @@ export default class MeeCats implements View {
                         },
                     ),
                 ),
-                el("span", "Powered by KLUBS")
+                el("a.powered", { href: "https://klu.bs/" }, "Powered by KLUBS"),
             ),
         ));
-        this.load();
+        // this.load();
     }
 
     private async load() {

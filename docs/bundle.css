@@ -575,14 +575,26 @@ body {
   margin: auto;
   font-family: 'Jellee-Roman';
 }
+@media only screen and (max-width: 719px) {
+  .meecats-view {
+    padding: 16px;
+  }
+}
 .meecats-view > header {
   display: flex;
   justify-content: center;
   margin-bottom: 64px;
 }
 .meecats-view > header > img {
-  width: 220px;
-  height: 80px;
+  max-width: 220px;
+  width: 100%;
+  max-height: 80px;
+}
+@media only screen and (max-width: 719px) {
+  .meecats-view > header > img {
+    max-width: 110px;
+    max-height: 40px;
+  }
 }
 .meecats-view > section {
   display: flex;
@@ -595,7 +607,14 @@ body {
   justify-content: center;
 }
 .meecats-view > section > .img-container > img {
-  width: 720px;
+  max-width: 720px;
+  width: 100%;
+}
+@media only screen and (max-width: 719px) {
+  .meecats-view > section > .img-container > img {
+    max-width: 360px;
+    width: 100%;
+  }
 }
 .meecats-view > section > h6 {
   font-size: 20px;
@@ -616,6 +635,11 @@ body {
   margin: 88px 0px;
   color: #d2f0ff;
 }
+@media only screen and (max-width: 719px) {
+  .meecats-view > section > .connect {
+    margin: 44px 0px;
+  }
+}
 .meecats-view > section > .connect > p {
   margin: 0px 32px;
 }
@@ -627,10 +651,17 @@ body {
   background-color: #d2f0ff;
   float: left;
 }
-.meecats-view > section > span {
+.meecats-view > section > a {
+  cursor: pointer;
   color: #488cf6;
   font-family: 'Jellee-Roman';
   margin-top: 128px;
+  text-decoration: none;
+}
+@media only screen and (max-width: 719px) {
+  .meecats-view > section > a {
+    margin-top: 64px;
+  }
 }
 .meecats-view > section > .button-container {
   display: flex;
@@ -638,10 +669,21 @@ body {
   gap: 48px;
 }
 .meecats-view > section > .button-container > a > img {
-  width: 200px;
+  max-width: 200px;
+  width: 100%;
+}
+@media only screen and (max-width: 719px) {
+  .meecats-view > section > .button-container > a > img {
+    width: 72px;
+  }
 }
 .meecats-view > section > .button-container > a > p {
   font-size: 20px;
   margin-top: 16px;
+}
+@media only screen and (max-width: 719px) {
+  .meecats-view > section > .button-container > a > p {
+    font-size: 16px;
+  }
 }
 

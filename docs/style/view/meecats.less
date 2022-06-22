@@ -14,14 +14,24 @@
     margin          : auto;
     font-family     : 'Jellee-Roman';
 
+    @media @phone {
+        padding: 16px;
+    }
+
     >header {
         display        : flex;
         justify-content: center;
         margin-bottom  : 64px;
 
         >img {
-            width : 220px;
-            height: 80px;
+            max-width : 220px;
+            width     : 100%;
+            max-height: 80px;
+
+            @media @phone {
+                max-width : 110px;
+                max-height: 40px;
+            }
         }
     }
 
@@ -36,7 +46,13 @@
             justify-content: center;
 
             >img {
-                width: 720px;
+                max-width: 720px;
+                width    : 100%;
+
+                @media @phone {
+                    max-width: 360px;
+                    width    : 100%;
+                }
             }
         }
 
@@ -61,6 +77,10 @@
             margin         : 88px 0px;
             color          : rgb(210, 240, 255);
 
+            @media @phone {
+                margin: 44px 0px;
+            }
+
             >p {
                 margin: 0px 32px;
             }
@@ -75,10 +95,16 @@
             }
         }
 
-        >span {
-            color      : #488cf6;
-            font-family: 'Jellee-Roman';
-            margin-top : 128px;
+        >a {
+            cursor         : pointer;
+            color          : #488cf6;
+            font-family    : 'Jellee-Roman';
+            margin-top     : 128px;
+            text-decoration: none;
+
+            @media @phone {
+                margin-top: 64px;
+            }
         }
 
         >.button-container {
@@ -88,12 +114,21 @@
 
             >a {
                 >img {
-                    width: 200px;
+                    max-width: 200px;
+                    width    : 100%;
+
+                    @media @phone {
+                        width: 72px;
+                    }
                 }
 
                 >p {
                     font-size : 20px;
                     margin-top: 16px;
+
+                    @media @phone {
+                        font-size: 16px;
+                    }
                 }
             }
         }
